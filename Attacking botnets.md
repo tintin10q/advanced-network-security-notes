@@ -5,7 +5,7 @@
 **Active detection** means actifly trying to attack a [[Botnets|botnet]]. You can do this by participating in a botnet and acting like you are a bot and see if you can get onto C&C or peers (infiltration). Then you could try hijack the C&C. 
 If you do hijack C&C, you know who all the bots are. Either you phyiscally seize the C&C or you try hack it or BGP or DNS blacklist it.
 
-**Passive detection** try to **detect bots** on hosts or on network. Either based on code **(syntax)** or **signature (hash)** - but botnets just change these things and signatures get out of data. 
+**Passive detection** try to **detect bots** on hosts or on network. Either based on code **(syntax)** or **signature (hash)** - but botnets just change these things and signatures get out of date. 
 You can also try **semantic techniques** to detect **behavior** but hard and false positives.  Correlational analysis is also something like this.  
 
 You can do a correlation analysis, you look at machines that should do the same thing and if one starts to deviate it could be part of a botnet.

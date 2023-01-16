@@ -15,7 +15,7 @@ Do not confuse ANonce with SNonce. ANonce is first and then Snonce. Then after t
 You start by becoming a man in the middle between STA and AP selectify relaying messages. The idea is to go through all the messages but then block message 4 from the STA to the AP. 
 
 But after the STA has send msg 4 it will have already installed the PTK and GTK.
-Then because the AP never got msg4 it retransmit message 3. This the mitm lets through and causes the STA to resend message 4 however this time it is encrypted using the key and counter 1. 
+Then because the AP never got msg4 it retransmits message 3. This the mitm lets through and causes the STA to resend message 4 however this time it is encrypted using the key and counter 1. 
 
 Now you have the keystream for the first message that the STA will send because you have a known plaintext attack with the first MS4 and the second encrypted msg4. 
 
@@ -28,6 +28,7 @@ But because the STA got message 3 again from the AP it sends message 4 and reins
 ![[4 Way Handshake Attack (Krack attack)2.png]]
 
 ![[4 Way Handshake Krack attack known plaintext.png]]
+So it first sends msg 4 then reinstalls the keys (counter reset) and then you encrypt a data with counter 1. 
 
 Turns out that in practice there are 2 scenarios:
 
@@ -68,7 +69,7 @@ Install key only ONCE in 4-way handshake.
 
 Or do not reset nonces when reinstalling the current key.
 
-### Krr∅∅k attack  (2020)
+### Kr∅∅k attack  (2020)
 
 **Disassociation**: connection between client and AP is terminated (eg. when user turns off Wi-Fi , or due to signal interference)
 **Reassociation**: reconnection after disassociation (eg. when client roams from one Wi-Fi AP to another)

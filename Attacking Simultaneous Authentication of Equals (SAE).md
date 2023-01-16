@@ -1,7 +1,9 @@
 
-The [[WPA#Simultaneous Authentication of Equals (SAE)]] is a step during establishment. It involves crypto, namely adding points on an elliptic curve. This is quite resourcefull so you can easily dos the [[Wifi|AP]] by just connecting with it often by sending a bunch of commit messages. 
+The [[WPA#Simultaneous Authentication of Equals (SAE)|Simultaneous Authentication of Equals (SAE)]] is a step during establishment. It involves crypto, namely adding points on an elliptic curve. This is quite resourcefull so you can easily dos the [[Wifi|AP]] by just connecting with it often by sending a bunch of commit messages. 
 
 Only 8 connection attempts is already enough for 521 bit prime. 70 connection for 256 bit prime. 
+
+## Prevention
 
 This is is adressed by the AP keeping track of the ungoing SAE handshakes. If the number goes above a threshold the AP responds to a new commit with an **anti clogging token** instead of doing the crypto. This token is derived from a hash of random secret and mac of connecting device. In the next try the STA should send the anti clogging token with the commit message.  Otherwise the AP just rejects the message. The stations that were trying to connect earlier get priority. This way even though you DoS you will still get through.
 

@@ -1,0 +1,60 @@
+- 5G NR 5G New Radio 
+- 5G NSA  5G Non-Standalone 
+- 5G SA 5G Standalone 
+- 5GC 5G Core 
+- AF Application Function 
+- AMF Access and Mobility Management Function 
+- AKA Authentication and Key Agreement 
+- AUSF Authentication Server Function 
+- eNodeB Evolved NodeB 
+- ECIES Elliptic Curve Integrated Encryption Scheme 
+- EEA EPS Encryption Algorithm 
+- EPC Evolved Packet Core 
+- E-UTRAN Evolved Universal Terrestrial Radio Access 
+- gNodeB gNodeB 
+- GUTI Global Unique Temporary Identifier 
+- HPLMN Home PLMN 
+- HSS Home Subscriber Service 
+- IMS IP Multimedia Subsystem 
+- IMSI International Mobile Subscriber Identity 
+- MAC Medium Access Control 
+- MCC Mobile Country Code 
+- MME Mobility Management Entity 
+- MNC Mobile Network Code 
+- MSIN Mobile Station Identification Number 
+- NAI Network Access Identifier 
+- NAS Non-Access Stratum 
+- NAS-MM NAS Mobility Management 
+- NAS-SM NAS Session Management 
+- NEF Network Exposure Function 
+- NGAP NG Application Protocol 
+- NRF Network Respository Function 
+- NSSF Network Slice Selection Function 
+- P-GW PDN Gateway 
+- PCF Policy Control Function 
+- PCRF Policy and Charging Rules Function 
+- PDCP Packet Data Convergence Protocol 
+- PDN Packet Data Network PHY Physical Layer 
+- PRINS PRotocol for N32 INterconnect Security 
+- RAN Radio Access Network 
+- RA-RNTI Random Access RNTI 
+- RLC Radio Link Control 
+- RNTI Radio Network Temporary Identity 
+- ROHC Robust Header Compression 
+- RRC Radio Resource Control 
+- RTP Real-Time Transport Protocol 
+- SCTP Stream Control Transmission Protocol 
+- SMF Session Management Function 
+- S-GW Serving Gateway 
+- SEPP Security Edge Protection Proxy 
+- SIP Session Initiation Protocol 
+- SMF Session Management Function 
+- SRTP Secure Real-Time Transport Protocol 
+- SUCI Subscription Concealed Identifier 
+- SUPI Subscription Permanent Identifier 
+- SS7 Signalling System 7 
+- TMSI Temporary Mobile Subscriber Identity 
+- UE User Equipment 
+- UDM Unified Data Management 
+- UPF User Plane Function 
+- VPLMN Visiting PLMN

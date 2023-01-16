@@ -1,5 +1,5 @@
 
-In the [[BGP]] protocol it is assumed that all [[Routing Security|AS]] can be trusted. This is not the case and incidents happen often.
+In the [[BGP]] protocol it is assumed that all [[Routing Security|AS]] can be trusted. This is not actually the case and incidents happen often.
 
 # BGP attacks
 
@@ -30,12 +30,11 @@ Several ways of improving BGP security have been proposed. But they all have lim
 ## MANRS (Mutually Agreed Norms for Routing Security)
 This is an initiative by network operators to agree to rules with how to deal with BGP.  882 participants as of november 2022. [MANRS Website](https://observatory.manrs.org)
 
-
-- Filtering - Ensure correctness of own announcement. Check if prefix is allocated to this AS.
-- Anti Spoofing 
-	- Source address validation - check if source address is in frefix allocated  to sender
-- Coordination: maintain globally accessible up to date contact information of network operators
-- Global validation: Publish data so that others can validate routing information 
+- **Filtering** - Ensure correctness of own announcement. Check if prefix is allocated to this AS.
+- **Anti Spoofing 
+	- **Source address validation** - check if source address is in prefix allocated to sender
+- **Coordination**: maintain globally accessible up to date contact information of network operators
+- **Global validation**: Publish data so that others can validate routing information 
 
 ## Generalized TTL Security Mechanism (GSTM)
 
@@ -43,11 +42,13 @@ In the ip protocol there is something called TTL (IPv4) and Hop Limit (IPv6). An
 
 However, the majority of BGP peering sessions are established between routers that have a direct connection.  GSTM says that senders should set TTL to 255 and a reciever should disregard TTL below some threshold. Probably just 255. This will disregard all BGP packets that passed at least one hop between sender and reciever. This makes it harder to send fake BGP because you have to inject it on the cable between AS. 
 
+This makes it really hard to start malicious announcements because neighbor will check. 
+
 ## Filtering using IRRs
 
-There are 5 regional internet registries (RIRs). They decide ip space and AS numbers and maintain IRR that contain information about routing. BGP annouchementes can be checked with this db. 
+There are 5 regional internet registries (RIRs). They decide ip space and AS numbers and maintain IRR that contain information about routing. BGP annouchementes can be checked with this db (ROA). 
 
-But that has issues because who knows if RIR is ok or up to date
+But that has issues because who knows if ROA is ok or up to date
 
 ## Route Origin Authorization (ROA)
 

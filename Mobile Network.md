@@ -1,6 +1,6 @@
 # Mobile Network
 
-A network as a phone, a base station, then a server with the code and then the internet. 
+A  network has a phone, a base station, then a server with the code and then the internet. 
 
 The phone connects to the base station
 The base station provides the radio connection 
@@ -12,12 +12,12 @@ In 4g this is all called:
 | component| LTE Acronym | LTE component| 
 | --------| -------| ---------|
 |Phone | UE | user equipment |
-|base station| eNodeB | evelved node b |
+|base station| eNodeB | evolved node b |
 | core network | epc | evolved packet core | 
 | internet | ... | ... |
 
 
-The connection betwwen UE and EnodeB is the air interface. 
+The connection between UE and EnodeB is the air interface. 
 This is the radio access network. Called **E-UTran** in 4g. 
 
 lte = 4g
@@ -28,17 +28,17 @@ lte = 4g
 
 You have L1, L3, L3.
 
-L1 = PHy
-L2 = MAC, RLC, PDCP
 L3 = RRC, NAS
+L2 = MAC, RLC, PDCP
+L1 = PHy
 
-These layers are basically the data link layer. 
+The layers in L2 are basically the data link layer. 
 
 ![[Mobile Network stack.png]]
 
 At the ue there is also the nas layer in the control plane.
 
- - **Nas** (Non Access Stratum) = Connects the UE inside the E-Utran with the MME outside the E_Utran, with a logical connection. This does Authentication of UE, security control, paging. It is a logical connection
+ - **Nas** (Non Access Stratum) = Connects the UE inside the E-Utran with the MME (entrence into epc) outside the E_Utran, with a logical connection. This does Authentication of UE, security control, paging. It is a logical connection
 - **RRC** (Radio Resource Control) = Manages the connection between the UE and the eNodeB. Connection establishemnt/release, radio bearer establishemtn, reconfiguration. This is the physical connection 
 - **IP** (internet protocol)
 - **PDCP**: Transport of data with ciphering and intergrity protection (RRC) and the transport of IP packets 

@@ -1,41 +1,41 @@
 
-The [[BGP]] protocol has many problems. The SCION architecture has been probosed as an alternative. Designed to provide route control, failure isolation, and explicit trust for end-to-end communication.
+The [[BGP]] protocol has many problems. The SCION architecture has been proposed as an alternative. SCION is designed to provide route control, failure isolation, and explicit trust for end-to-end communication.
 
-SCION Introduces additional hierarchical layer by grouping ASes into isolation domains (ISDs)
+SCION Introduces additional hierarchical layer by grouping ASes into **isolation domains** (ISD)
 
-Apperenlty 200x faster then [[BGP]].
+Apparently 200x faster than [[BGP]].
 
 
 ![[SCION.png]]
 
-Then the IDS is govered by trust root configuration (TRC). TRC defines roots of trust for PKI within ISD by specifing a version number and trusted public keys. 
+Then the IDS is governed by trust root configuration (TRC) which lives in the ISD core. TRC defines roots of trust for PKI within ISD by specifying a version number and trusted public keys. 
 
 - Path-based architecture where routing is based on Packet-Carried-Forwarding State (PCFS)
-This is a special header that contains th AS level path from source to destination.
-The idea is that senders already decide the whole path beforehand. 
+This is a special header added in SCION that contains the AS level path from source to destination.
+The idea is that senders routers already decide the whole path beforehand. 
 
-You got the control plane for discovering paths and making those pathds available to end hosts and data plane where you got packet forwarding using provided paths.
+You got the **control plane** for discovering paths and making those paths available to end hosts and **data plane** where you got packet forwarding using provided paths.
 
 ## Control plane
 
-This is componets within AS:
+These are components within AS to find paths:
 
-- Beaconing servers are responsible for beaconing process •
-- Path servers store path segments 
-- Certificate servers store cached copies of TRC and assist with validating path information (PCBs and path segments are signed ) 
-- Border routers provide connectivity between ASes (ingress and egress interfaces) 
-- Internal routers forward packets within AS
+- **Beaconing servers** are responsible for beaconing process described below
+- **Path servers** store path segments 
+- **Certificate servers** store cached copies of TRC and assist with validating path information (PCBs and path segments are signed) 
+- **Border routers** provide connectivity between ASes (ingress and egress interfaces) 
+- **Internal routers** forward packets within AS
 
 ![[SCION Beaconing.png]]
 
 ### Intra ISD paths 
 
-The idea is that there is a beaconing process for discovering paths within the same ISD. This is done by the core ASes. This is called path-segment construction beacons (PCBs) and they are send downstream to neighboring non-core AS. Non core AS recieves the PCB add their own identity and **hop field** to PCB protected with integrity check (MAC), signs the PCB and sends the PCB to other neighbors further down etc. This generates (ingress and egress interfaces)
-Each AS then sends back to ISD core the (PCB) as path segments that they like and over which path they can be reached. Finally the ISD core knows how each AS can be reached and AS can also know how ISD core can be reached. 
+The idea is that there is a beaconing process for discovering paths within the same ISD. This is beaconed by the core ASes. These beacons are called **path-segment construction beacons**(PCBs) and they are sent downstream to neighbouring non-core AS. The non-core AS receives the PCB adds their own identity and **hop field** to PCB protected with integrity check (MAC), signs the PCB and sends the PCB to other neighbours further down etc. This generates (ingress and egress interfaces). 
+Each AS then sends back to ISD core the (PCB) as path segments that they like and over which path they can be reached. Finally, the ISD core knows how each AS can be reached and AS can also know how ISD core can be reached. 
 
 This process is repeated every couple seconds. 
 
-The hops are used to specify the map for forwarding by AS. This also has an exporation time. 
+The hops are used to specify the map for forwarding by AS. This also has an exploration time. 
 
 ### Inter ISD paths
 
@@ -68,16 +68,16 @@ These paths basically consist in the up segment (A->C) the core segment (C->D) a
 ![[SCION path combination simple.png]]
 
 
-The SCION packet contains AS-level path (with ingress and egress interfaces) to get from source to destination and also MAC. This requires key mangagement with border routers and becon servers. Only the ISD border routers have to decide on paths and so only border routers use the ingress and egress interfaces. This way intraAS can have its own adressing. Destination can respond to source by just inverting the path that is in the header or perform own path lookup. 
+The SCION packet contains AS-level path (with ingress and egress interfaces) to get from source to destination and also MAC. This requires key management with border routers and bacon servers. Only the ISD border routers have to decide on paths and so only border routers use the ingress and egress interfaces. This way intra AS can have its own addressing. Destination can respond to source by just inverting the path that is in the header or perform own path lookup. 
 
-There is SCION control message protocol SCMP (literally an ancronyms in an acronyms...) for link revocation.  
+There is SCION control message protocol SCMP (literally an acronyms in an acronym...) for link revocation.  
 
 ## Origin and Path Trace (OPT) 
 
-This is an exstension to SCION to validate packet sources and traces and integrity of data and  paths. 
+This is an extension to SCION to validate packet sources and traces and integrity of data and  paths. 
 
-The idea is that the SCION headers contain a Origin Validation (OV) header. This requires everyone to actually have symetic keys!
+The idea is that the SCION headers contain a Origin Validation (OV) header. This requires everyone to actually have symmetric keys!
 
-The cool thing is that every AS will add their signature to the packet by sining the datahash. This is then send back and then you know that the path was also taken. This is send in the path validation field. 
+The cool thing is that every AS will add their signature to the packet by singing the data hash. This is then sent back, and then you know that the path was also taken. This is sent in the path validation field. 
 
 

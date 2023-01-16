@@ -2,13 +2,13 @@ There are different types of [[Wifi]] networks.
 
 ## Open Wi-Fi networks 
 
-These are public hotspots for free wifi. For instance in a train. Could use a pre shared key publicly displayed. There could be a website your linked to to log in. 
+These are public hotspots for free Wi-Fi. For instance in a train. Could use a pre shared key publicly displayed. There could be a website your linked to log in. 
 
-### Authentication methods open wifi 
+### Authentication methods open Wi-Fi 
 
 - Open system - no authentication 
 - Shared Key - uses pre-shared key
-- Opportunistic Wireless encryption (OWE) uses diffie hellman to obtain shared key
+- Opportunistic Wireless encryption (OWE) uses Diffie Hellman to obtain shared key
 
 #### Open System
 
@@ -17,13 +17,13 @@ This is the basic system. The shared key and opportunistic wireless encryption b
 There are 4 phases:
 
 1. Discovery 
-	- AP advertises presence to STA by transmiting beacon frames
+	- AP advertises presence to STA by transmitting beacon frames
 	- STA can send *probe request*, AP will send back *probe response* (same as beacon response)
 2. Open system authentication 
 	- STA says to AP pls authenticate me pls
 	- AP authenticates
 3. Association
-	- More parameters like what cipher but this is quite empty here
+	- More parameters like what cipher, but this is quite empty here
 4.  Data exchange 
 
 ![[Types of Wifi open wifi.png]]
@@ -69,7 +69,6 @@ Because its diffie helman you have to authenticate the public key of the AP. If 
 Adversary is able to forge packets and inspect modify any data between AP' and AP.
 
 You can actually hide the SSID in the beacon request and then you have to know it beforehand but this is security by obscurity and if it is written down you can find it. You can also evedrop on the STA when it actually makes the request with the SSID. 
-
 
 ##### Karma
 A special case of the Evil twin attack is KARMA. Here in the probe requst from STA it includes list of SSID that STA connected to before already, the prevered network list (PNL). Then the attacker can just pick the SSID from the PNL.
