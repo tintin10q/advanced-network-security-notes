@@ -5,7 +5,7 @@ Here are the notes I took for a course at Radboud University called Advanced Net
 The main topics are: 
 
 - [Mobile Networks](Mobile%20Network.md)
-- [Wifi](wifi.md)
+- [Wifi](WiFi.md)
 - [Bot Nets](Botnets.md)
 - [Routing Security](Routing%20Security.md)
 
