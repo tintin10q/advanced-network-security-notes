@@ -1,0 +1,3 @@
+- Realistic: Real-world incidents 
+- Scientific: Controlled setting, artificial scope 
+- Borderline: Feasible but with many limitations/requirements

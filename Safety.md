@@ -1,0 +1,1 @@
+Safety and Security are both about protection, still different: Safety: against (unintentional) accidents or disasters. Security is harder because there people do intential bad.
