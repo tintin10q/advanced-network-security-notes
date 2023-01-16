@@ -1,3 +1,4 @@
+# Mobile Network
 
 A network as a phone, a base station, then a server with the code and then the internet. 
 
@@ -44,7 +45,7 @@ At the ue there is also the nas layer in the control plane.
 - **RLC**: Transport PDCP data in different modese (Acknowledged (AM), unacknowledged (um), transparent (TM))
 - **MAC**: Logic la channels for RLC for multiplexing into the physical transmission scheduling of withing and betweeen UEs.
 - **PHy**: transport the data actually (phisical layer) 
-- 
+
 ### User plane
 The user plane is your data. What you want to connect to. This is a bit of a different stack at L3
 
