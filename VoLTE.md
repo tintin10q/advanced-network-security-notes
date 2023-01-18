@@ -35,7 +35,7 @@ is a technique to save bits by removing redundancies in the headers of IP, TCP, 
 See example here (red is removed)
 ![[VoLTE compressed headers.png]]
 
-The idea is that you send the first header with all header information included. The rest of the headers are stripped after that. The base station decides how to do the compression. 
+The idea is that you send the first message with all header information included. The rest of the headers are stripped after that. The base station decides how to do the compression. 
 
 Why is this relevant? Because if there is compression it is harder to reconstruct the data. 
 

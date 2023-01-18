@@ -73,7 +73,7 @@ Mutual authentication between client and authentication server via TLS using cer
 
 Improves the hardness of setting up key pair. Basically now only the authentication server has a certificate. This is how to authentication server authenticates to STA (which the STA has to verify) but the STA uses some other method like username-password to authenticate to the server. 
 
-Handshake phase (inner authentication) auth server auths to  STA and the data phase (inner authentication) STA auths to auth server.
+Handshake phase (outer authentication) auth server auths to  STA and the data phase (inner authentication) STA auths to auth server.
 
 #### Handshake phase (outher authentication)
 -  STA authenticates auth server using server certificate. 
