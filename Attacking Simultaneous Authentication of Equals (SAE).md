@@ -1,5 +1,5 @@
 
-The [[WPA#Simultaneous Authentication of Equals (SAE)|Simultaneous Authentication of Equals (SAE)]] is a step during establishment. It involves crypto, namely adding points on an elliptic curve. This is quite resourcefull so you can easily dos the [[Wifi|AP]] by just connecting with it often by sending a bunch of commit messages. 
+The [[WPA#Simultaneous Authentication of Equals (SAE)|Simultaneous Authentication of Equals (SAE)]] is a step during establishment. It involves crypto, namely adding points on an elliptic curve. This is quite resourcefull so you can easily dos the [[Wi-Fi|AP]] by just connecting with it often by sending a bunch of commit messages. 
 
 Only 8 connection attempts is already enough for 521 bit prime. 70 connection for 256 bit prime. 
 

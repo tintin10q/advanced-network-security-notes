@@ -1,4 +1,4 @@
-There are different types of [[Wifi]] networks. 
+There are different types of [[Wi-Fi]] networks. 
 
 ## Open Wi-Fi networks 
 

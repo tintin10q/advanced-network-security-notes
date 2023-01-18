@@ -1,5 +1,5 @@
 
-Before a [[Wifi|STA]] to transmit over a network it first senses the channel to determine if another STA is transmitting IDL or not. STA use the CSMA/CA method (carrier sense mutiple access with collision avoidenance). If the channel is busy the STA waits for a random backoff period so that there is a chance that they can send later. 
+Before a [[Wi-Fi|STA]] to transmit over a network it first senses the channel to determine if another STA is transmitting IDL or not. STA use the CSMA/CA method (carrier sense mutiple access with collision avoidenance). If the channel is busy the STA waits for a random backoff period so that there is a chance that they can send later. 
 
 ![[CSMA backoff period.png]]
 
